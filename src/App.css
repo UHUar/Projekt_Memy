@@ -9,19 +9,6 @@
   margin-top: 40px;
 }
 
-.App2 {
-  font: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: rgb(20, 20, 19);
-  background-color: rgb(210, 199, 199);
-  text-align: center;
-  margin-top: 40px;
-  margin-left: 0;
-}
-
-.functionApp {
-  text-align: left;
-}
-
 /* Boczne menu */
 .sidebar {
   width: 250px;
@@ -51,6 +38,11 @@
 
 .sidebar ul li a:hover {
   color: #f4f4f4;
+}
+
+.sidebar ul li a.active {
+  color: red; /* Kolor aktywnego linku */
+  font-weight: bold; /* Opcjonalnie pogrubienie */
 }
 
 .main-content {

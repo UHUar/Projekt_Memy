@@ -1,7 +1,7 @@
 import React from "react";
 import "../App.css";
 
-export function Hot({ memes, setMemes }) {
+export function MemesList({ memes, setMemes, filterType }) {
   const handleYesVote = (title) => {
     setMemes(
       memes.map((meme) =>
@@ -18,12 +18,15 @@ export function Hot({ memes, setMemes }) {
     );
   };
 
-  const filteredMemes = memes.filter((meme) => meme.ups - meme.downs > 5);
+  const filteredMemes =
+    filterType === "hot"
+      ? memes.filter((meme) => meme.ups - meme.downs > 5)
+      : memes.filter((meme) => meme.ups - meme.downs <= 5);
 
   return (
     <div className="main-content">
       <div>
-        <h1>Hot Memes</h1>
+        <h1>{filterType === "hot" ? "Hot Memes" : "Regular Memes"}</h1>
         {filteredMemes.map((meme, index) => (
           <div key={index} className="meme">
             <h2>{meme.title}</h2>
@@ -43,4 +46,4 @@ export function Hot({ memes, setMemes }) {
   );
 }
 
-export default Hot;
+export default MemesList;
